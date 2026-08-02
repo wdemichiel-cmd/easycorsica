@@ -3,27 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EasyCorsica — Locations de vacances en Corse</title>
-<meta name="description" content="Locations de vacances en Corse : villa, maison de village et studio, entre plage et maquis. Réservez votre été.">
+<title>EasyCorsica — Locations de vacances dans le golfe d'Ajaccio</title>
+<meta name="description" content="Les locations de vacances d'Isabelle en Corse : villas, maisons et appartements vue mer autour d'Ajaccio, des Sanguinaires à Porticcio.">
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ciel:#FFC178;
-  --couchant:#F5854F;
-  --granite:#C7432B;
-  --mer:#0C5D6B;
-  --mer-sombre:#08454F;
-  --ecume:#EAF6F4;
-  --sable:#F2E0BE;
-  --sable-clair:#F8ECD3;
-  --maquis:#2E4034;
-  --maquis-sombre:#233229;
-  --encre:#26201A;
-  --craie:#FFF6E6;
-  --radius:22px;
+  --ciel:#FFC178; --couchant:#F5854F; --granite:#C7432B;
+  --mer:#0C5D6B; --mer-sombre:#08454F; --ecume:#EAF6F4;
+  --sable:#F2E0BE; --sable-clair:#F8ECD3;
+  --maquis:#2E4034; --maquis-sombre:#233229;
+  --encre:#26201A; --craie:#FFF6E6; --radius:22px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -34,7 +26,6 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--granite);outline-offset:3px;border-radius:4px}
 img{max-width:100%;display:block}
 
-/* ---------- NAV ---------- */
 nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(20px,5vw,56px)}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--craie)}
 .brand img{width:46px;height:46px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
@@ -45,81 +36,66 @@ nav ul a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--craie
 nav ul a:hover{text-decoration:underline;text-underline-offset:5px}
 @media(max-width:640px){nav ul{display:none}}
 
-/* ---------- HERO : photo réelle + soleil + Ken Burns ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;color:var(--craie)}
 .hero-bg{position:absolute;inset:0;background:url("images/hero.jpg") center 35%/cover no-repeat;animation:kenburns 26s ease-in-out infinite alternate;will-change:transform}
 @keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.1) translateY(-1.5%)}}
-.hero-grade{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(255,163,84,.42) 0%,rgba(199,67,43,.18) 45%,rgba(12,40,50,.62) 100%)}
+.hero-grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,163,84,.42) 0%,rgba(199,67,43,.18) 45%,rgba(12,40,50,.62) 100%)}
 .sun{position:absolute;right:clamp(6%,12vw,16%);top:14%;width:clamp(120px,18vw,220px);aspect-ratio:1;border-radius:50%;
-  background:radial-gradient(circle at 42% 38%,#FFF7DF 0%,#FFDf94 45%,#FFB25E 100%);
+  background:radial-gradient(circle at 42% 38%,#FFF7DF 0%,#FFDF94 45%,#FFB25E 100%);
   box-shadow:0 0 110px 44px rgba(255,214,140,.55);mix-blend-mode:screen;will-change:transform}
-.hero-inner{position:relative;z-index:3;padding:0 clamp(20px,6vw,72px) 150px;max-width:900px}
+.hero-inner{position:relative;z-index:3;padding:0 clamp(20px,6vw,72px) 150px;max-width:960px}
 .hero .eyebrow{color:#FFE1B8}
-.hero h1{font-size:clamp(3rem,9vw,6.6rem);margin:14px 0 20px;text-shadow:0 3px 30px rgba(30,10,0,.35)}
+.hero h1{font-size:clamp(2.8rem,8.4vw,6.2rem);margin:14px 0 20px;text-shadow:0 3px 30px rgba(30,10,0,.35)}
 .hero h1 .ital{font-style:italic;font-variation-settings:"SOFT" 100;color:#FFD98A}
-.hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:33em;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:34em;font-weight:500;text-shadow:0 1px 12px rgba(0,0,0,.4)}
 .hero-cta{margin-top:34px;display:flex;gap:16px;flex-wrap:wrap}
 .btn{display:inline-block;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:999px;font-size:1rem;transition:transform .18s ease,box-shadow .18s ease}
 .btn-primary{background:var(--craie);color:var(--granite)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.35)}
 .btn-ghost{border:2px solid rgba(255,246,230,.7);color:var(--craie)}
 .btn-ghost:hover{border-color:var(--craie);transform:translateY(-3px)}
-/* entrée orchestrée */
 .rise{opacity:0;transform:translateY(26px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
 .rise.d1{animation-delay:.15s}.rise.d2{animation-delay:.3s}.rise.d3{animation-delay:.5s}.rise.d4{animation-delay:.7s}
 @keyframes rise{to{opacity:1;transform:none}}
 
-/* ---------- VAGUES ANIMÉES + VOILIER ---------- */
 .shore{position:absolute;left:0;right:0;bottom:-2px;z-index:4;height:130px;pointer-events:none}
 .wave{position:absolute;left:0;bottom:0;width:200%;height:100%;background-repeat:repeat-x;background-size:50% 100%}
-.w1{animation:drift 16s linear infinite;opacity:.55;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C240,30 480,96 720,64 C960,32 1200,92 1440,58 L1440,130 L0,130 Z' fill='%23EAF6F4'/%3E%3C/svg%3E")}
-.w2{animation:drift 11s linear infinite reverse;opacity:.7;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,84 C260,50 520,110 780,78 C1040,46 1240,104 1440,72 L1440,130 L0,130 Z' fill='%2379C7CE'/%3E%3C/svg%3E")}
-.w3{animation:drift 8s linear infinite;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,96 C240,66 520,120 760,92 C1000,64 1220,116 1440,86 L1440,130 L0,130 Z' fill='%230C5D6B'/%3E%3C/svg%3E")}
+.w1{animation:drift 16s linear infinite;opacity:.55;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,70 C240,30 480,96 720,64 C960,32 1200,92 1440,58 L1440,130 L0,130 Z' fill='%23EAF6F4'/%3E%3C/svg%3E")}
+.w2{animation:drift 11s linear infinite reverse;opacity:.7;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,84 C260,50 520,110 780,78 C1040,46 1240,104 1440,72 L1440,130 L0,130 Z' fill='%2379C7CE'/%3E%3C/svg%3E")}
+.w3{animation:drift 8s linear infinite;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,96 C240,66 520,120 760,92 C1000,64 1220,116 1440,86 L1440,130 L0,130 Z' fill='%230C5D6B'/%3E%3C/svg%3E")}
 @keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .boat{position:absolute;bottom:96px;left:-8%;z-index:3;width:54px;animation:sail 46s linear infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
 .boat svg{animation:bob 3.6s ease-in-out infinite;display:block}
 @keyframes sail{from{left:-8%}to{left:106%}}
 @keyframes bob{0%,100%{transform:rotate(-2.5deg) translateY(0)}50%{transform:rotate(2.5deg) translateY(-5px)}}
 
-/* ---------- BANDEAU PLAGES (marquee) ---------- */
 .ticker{background:var(--mer);color:var(--ecume);overflow:hidden;border-top:1px solid rgba(234,246,244,.2);border-bottom:1px solid rgba(234,246,244,.2)}
 .ticker-track{display:flex;width:max-content;animation:ticker 30s linear infinite;padding:13px 0}
 .ticker span{font-family:"Fraunces",serif;font-style:italic;font-size:1.05rem;white-space:nowrap;padding:0 26px;opacity:.9}
 .ticker b{color:#FFD98A;font-weight:400}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ---------- LOCATIONS (mer) ---------- */
 .mer{background:linear-gradient(180deg,var(--mer) 0%,var(--mer-sombre) 100%);color:var(--craie);padding:90px clamp(20px,6vw,72px) 110px}
-.section-head{max-width:780px;margin:0 auto 56px;text-align:center}
+.section-head{max-width:800px;margin:0 auto 56px;text-align:center}
 .mer .eyebrow{color:#9FD8CF}
 .section-head h2{font-size:clamp(2rem,4.6vw,3.3rem);margin:12px 0 16px}
-.section-head p{opacity:.88;max-width:38em;margin:0 auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;max-width:1180px;margin:0 auto}
+.section-head p{opacity:.88;max-width:40em;margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;max-width:1240px;margin:0 auto}
 .card{background:var(--sable-clair);color:var(--encre);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
   box-shadow:0 18px 40px rgba(4,32,37,.35);transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s ease}
 .card:hover{transform:translateY(-10px) rotate(-.4deg);box-shadow:0 30px 60px rgba(4,32,37,.5)}
-.card-visual{height:190px;position:relative;display:flex;align-items:flex-end;padding:16px;overflow:hidden}
-.card-visual::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 80% 10%,rgba(255,246,230,.35),transparent 55%)}
-.v1{background:linear-gradient(160deg,#E8A45C,#C7432B 70%)}
-.v2{background:linear-gradient(160deg,#7FB69B,#2E4034 75%)}
-.v3{background:linear-gradient(160deg,#79C7CE,#0C5D6B 72%)}
-.card-visual .tag{position:relative;z-index:1;background:rgba(255,246,230,.94);border-radius:999px;padding:6px 14px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.card-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
-.card-body h3{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600}
-.card-body .desc{font-size:.97rem;opacity:.85;flex:1}
-.card-meta{display:flex;flex-wrap:wrap;gap:8px}
+.card-photo{height:210px;position:relative;overflow:hidden}
+.card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .card-photo img{transform:scale(1.06)}
+.card-photo .tag{position:absolute;left:14px;bottom:14px;background:rgba(255,246,230,.94);border-radius:999px;padding:6px 14px;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.card-photo .superhost{position:absolute;right:14px;top:14px;background:var(--granite);color:var(--craie);border-radius:999px;padding:6px 12px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.card-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-body h3{font-family:"Fraunces",serif;font-size:1.32rem;font-weight:600;line-height:1.2}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
 .chip{background:rgba(38,32,26,.08);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:600}
-.card-price{display:flex;align-items:baseline;justify-content:space-between;margin-top:6px;border-top:1.5px solid rgba(38,32,26,.14);padding-top:14px}
-.card-price strong{font-family:"Fraunces",serif;font-size:1.45rem}
-.card-price span{font-size:.82rem;opacity:.7}
-.card a.btn{align-self:flex-start;background:var(--granite);color:var(--craie);padding:11px 22px;font-size:.92rem}
+.card a.btn{align-self:flex-start;background:var(--granite);color:var(--craie);padding:11px 22px;font-size:.92rem;margin-top:4px}
 .card a.btn:hover{box-shadow:0 8px 18px rgba(199,67,43,.4)}
 
-/* ---------- ÎLE (sable) ---------- */
 .plage-divider{display:block;width:100%;height:70px;margin:-1px 0;background:var(--mer-sombre)}
 .ile{background:var(--sable);padding:90px clamp(20px,6vw,72px) 80px}
 .ile .eyebrow{color:var(--granite)}
@@ -128,34 +104,19 @@ nav ul a:hover{text-decoration:underline;text-underline-offset:5px}
 .ile-item:hover{transform:translateY(-4px)}
 .ile-item h3{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;margin-bottom:8px}
 .ile-item p{font-size:.95rem;opacity:.85}
-.ile-item .dist{display:inline-block;margin-top:10px;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--mer)}
 
-/* ---------- INFOS ---------- */
-.infos{background:var(--sable-clair);padding:76px clamp(20px,6vw,72px)}
-.infos-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
-@media(max-width:720px){.infos-inner{grid-template-columns:1fr}}
-.infos h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:18px}
-.infos ul{list-style:none;display:flex;flex-direction:column;gap:12px}
-.infos li{padding-left:30px;position:relative;font-size:1rem}
-.infos li::before{content:"";position:absolute;left:0;top:.42em;width:14px;height:14px;border-radius:50%;
-  background:radial-gradient(circle at 35% 35%,#FFD98A,var(--couchant))}
-
-/* ---------- CONTACT (maquis) ---------- */
 .contact{background:linear-gradient(180deg,var(--maquis),var(--maquis-sombre));color:var(--craie);padding:96px clamp(20px,6vw,72px) 60px;text-align:center}
 .contact .eyebrow{color:#A8C9A2}
 .contact h2{font-size:clamp(2.2rem,5.4vw,3.8rem);max-width:14em;margin:14px auto 18px}
 .contact h2 .ital{font-style:italic;font-variation-settings:"SOFT" 100;color:#E8C889}
 .contact p{opacity:.85;max-width:36em;margin:0 auto 34px}
 .contact .btn-primary{background:var(--craie);color:var(--maquis-sombre)}
-.contact .coord{margin-top:26px;font-size:.98rem;opacity:.85}
-.contact .coord a{text-underline-offset:4px}
 footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.84rem;opacity:.65}
 
-/* ---------- Révélations au scroll ---------- */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
-.cards .reveal:nth-child(2){transition-delay:.12s}
-.cards .reveal:nth-child(3){transition-delay:.24s}
+.cards .reveal:nth-child(3n+2){transition-delay:.12s}
+.cards .reveal:nth-child(3n){transition-delay:.24s}
 .ile-grid .reveal:nth-child(2){transition-delay:.1s}
 .ile-grid .reveal:nth-child(3){transition-delay:.2s}
 .ile-grid .reveal:nth-child(4){transition-delay:.3s}
@@ -174,9 +135,8 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
   <a class="brand" href="#top"><img src="images/logo.png" alt=""><span>Easy<em>Corsica</em></span></a>
   <ul>
     <li><a href="#locations">Locations</a></li>
-    <li><a href="#ile">L'île</a></li>
-    <li><a href="#infos">Infos pratiques</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#ile">Le golfe</a></li>
+    <li><a href="#contact">Réserver</a></li>
   </ul>
 </nav>
 
@@ -185,12 +145,12 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
   <div class="hero-grade" aria-hidden="true"></div>
   <div class="sun" id="sun" aria-hidden="true"></div>
   <div class="hero-inner">
-    <span class="eyebrow rise d1">Locations de vacances · Corse-du-Sud</span>
-    <h1 class="display rise d2">Les pieds dans l'eau,<br>la tête dans le <span class="ital">maquis.</span></h1>
-    <p class="lead rise d3">Trois maisons entre plage et montagne, tenues par une famille du coin. Vous arrivez, on vous donne les clés, l'île fait le reste.</p>
+    <span class="eyebrow rise d1">Locations &amp; Vacances · Golfe d'Ajaccio</span>
+    <h1 class="display rise d2">La mer en face,<br>le <span class="ital">maquis</span> derrière.</h1>
+    <p class="lead rise d3">Villas, maisons et appartements vue mer autour d'Ajaccio — des Sanguinaires à Porticcio. Des locations tenues par Isabelle, votre hôte sur place.</p>
     <div class="hero-cta rise d4">
       <a class="btn btn-primary" href="#locations">Voir les locations</a>
-      <a class="btn btn-ghost" href="#contact">Demander des dates</a>
+      <a class="btn btn-ghost" href="https://www.airbnb.fr/users/show/31966655" rel="noopener">Profil Airbnb d'Isabelle</a>
     </div>
   </div>
   <div class="boat" aria-hidden="true">
@@ -203,46 +163,96 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Palombaggia <b>☀</b></span><span>Santa Giulia <b>☀</b></span><span>Rondinara <b>☀</b></span><span>Cala Rossa <b>☀</b></span><span>Pinarello <b>☀</b></span><span>Fautea <b>☀</b></span><span>Tamaricciu <b>☀</b></span><span>Acciaju <b>☀</b></span>
-    <span>Palombaggia <b>☀</b></span><span>Santa Giulia <b>☀</b></span><span>Rondinara <b>☀</b></span><span>Cala Rossa <b>☀</b></span><span>Pinarello <b>☀</b></span><span>Fautea <b>☀</b></span><span>Tamaricciu <b>☀</b></span><span>Acciaju <b>☀</b></span>
+    <span>Les Sanguinaires <b>☀</b></span><span>Capo di Feno <b>☀</b></span><span>Barbicaja <b>☀</b></span><span>Marinella <b>☀</b></span><span>Trottel <b>☀</b></span><span>Porticcio <b>☀</b></span><span>Saint-François <b>☀</b></span><span>La Parata <b>☀</b></span>
+    <span>Les Sanguinaires <b>☀</b></span><span>Capo di Feno <b>☀</b></span><span>Barbicaja <b>☀</b></span><span>Marinella <b>☀</b></span><span>Trottel <b>☀</b></span><span>Porticcio <b>☀</b></span><span>Saint-François <b>☀</b></span><span>La Parata <b>☀</b></span>
   </div>
 </div>
 
 <section class="mer" id="locations">
   <div class="section-head reveal">
     <span class="eyebrow">Nos locations</span>
-    <h2 class="display">Trois adresses, un seul mot d'ordre : les pieds dans l'eau avant midi.</h2>
-    <p>Toutes équipées, toutes à moins de 15 minutes d'une plage, louées du samedi au samedi en été.</p>
+    <h2 class="display">Dix adresses vue mer autour d'Ajaccio.</h2>
+    <p>Chaque location a sa page Airbnb : photos complètes, calendrier, tarifs et réservation en ligne.</p>
   </div>
   <div class="cards">
     <article class="card reveal">
-      <div class="card-visual v1"><span class="tag">Villa · 6 pers</span></div>
+      <div class="card-photo"><img src="images/annonces/l6_116961757392.jpg" alt="Villa d'exception avec piscine privée et vue mer" loading="lazy"><span class="tag">Villa</span><span class="superhost">Superhost</span></div>
       <div class="card-body">
-        <h3>Casa di l'Alivu</h3>
-        <p class="desc">Villa de plain-pied sous les oliviers, grande terrasse ombragée, piscine au sel et barbecue en pierre. Le soir, on entend les grillons, pas les voisins.</p>
-        <div class="card-meta"><span class="chip">3 chambres</span><span class="chip">Piscine</span><span class="chip">Clim</span><span class="chip">Wifi</span></div>
-        <div class="card-price"><strong>à partir de 1 450 €</strong><span>la semaine</span></div>
-        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+        <h3>Villa d'exception avec piscine privée et vue mer</h3>
+        <div class="card-meta"><span class="chip">4 chambres</span><span class="chip">4 lits</span><span class="chip">Piscine privée</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1169617573925125661" rel="noopener">Voir sur Airbnb</a>
       </div>
     </article>
     <article class="card reveal">
-      <div class="card-visual v2"><span class="tag">Maison · 4 pers</span></div>
+      <div class="card-photo"><img src="images/annonces/l4_104124527135.jpg" alt="Villa vue mer avec piscine proche Porticcio" loading="lazy"><span class="tag">Villa</span></div>
       <div class="card-body">
-        <h3>U Fragnu</h3>
-        <p class="desc">Ancienne maison de village en granite, fraîche même en août, à deux ruelles de la place et de son marché. Terrasse sur les toits pour l'apéritif au coucher du soleil.</p>
-        <div class="card-meta"><span class="chip">2 chambres</span><span class="chip">Terrasse</span><span class="chip">Clim</span><span class="chip">Wifi</span></div>
-        <div class="card-price"><strong>à partir de 890 €</strong><span>la semaine</span></div>
-        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+        <h3>Villa vue mer avec piscine proche Porticcio</h3>
+        <div class="card-meta"><span class="chip">5 chambres</span><span class="chip">4 lits</span><span class="chip">Piscine</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1041245271352031403" rel="noopener">Voir sur Airbnb</a>
       </div>
     </article>
     <article class="card reveal">
-      <div class="card-visual v3"><span class="tag">Studio · 2 pers</span></div>
+      <div class="card-photo"><img src="images/annonces/l5_759839334186.jpg" alt="Villa vue mer proche Ajaccio" loading="lazy"><span class="tag">Villa</span><span class="superhost">Superhost</span></div>
       <div class="card-body">
-        <h3>Studio Marina</h3>
-        <p class="desc">Studio lumineux au-dessus du port : vous prenez le café en regardant les bateaux sortir. Idéal pour un couple qui compte surtout vivre dehors.</p>
-        <div class="card-meta"><span class="chip">Vue port</span><span class="chip">Cuisine équipée</span><span class="chip">Clim</span></div>
-        <div class="card-price"><strong>à partir de 520 €</strong><span>la semaine</span></div>
-        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+        <h3>Villa vue mer proche Ajaccio</h3>
+        <div class="card-meta"><span class="chip">3 chambres</span><span class="chip">3 lits</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/759839334186715568" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l3_889835719977.jpg" alt="Villa vue mer et montagne" loading="lazy"><span class="tag">Villa</span><span class="superhost">Superhost</span></div>
+      <div class="card-body">
+        <h3>Villa vue mer et montagne</h3>
+        <div class="card-meta"><span class="chip">2 chambres</span><span class="chip">2 lits</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/889835719977715691" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l8_166952566768.jpg" alt="Maison familiale vue mer avec piscine chauffée" loading="lazy"><span class="tag">Maison</span></div>
+      <div class="card-body">
+        <h3>Maison familiale vue mer avec piscine chauffée</h3>
+        <div class="card-meta"><span class="chip">5 chambres</span><span class="chip">7 lits</span><span class="chip">Piscine chauffée</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1669525667684698276" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l9_136383259699.jpg" alt="Belle Maison rénovée, proche Ajaccio" loading="lazy"><span class="tag">Maison</span></div>
+      <div class="card-body">
+        <h3>Belle Maison rénovée, proche Ajaccio</h3>
+        <div class="card-meta"><span class="chip">3 chambres</span><span class="chip">3 lits</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1363832596995494688" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l7_142539895059.jpg" alt="Superbe appartement vue mer - piscine chauffée" loading="lazy"><span class="tag">Appartement</span><span class="superhost">Superhost</span></div>
+      <div class="card-body">
+        <h3>Superbe appartement vue mer — piscine chauffée</h3>
+        <div class="card-meta"><span class="chip">3 chambres</span><span class="chip">6 lits</span><span class="chip">Piscine chauffée</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1425398950591018601" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l0_153102834399.jpg" alt="Appartement Standing, vue mer - Les Sanguinaires" loading="lazy"><span class="tag">Appartement</span></div>
+      <div class="card-body">
+        <h3>Appartement Standing, vue mer — Les Sanguinaires</h3>
+        <div class="card-meta"><span class="chip">2 chambres</span><span class="chip">3 lits</span><span class="chip">Réservation instantanée</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1531028343997034292" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l2_49651179.jpg" alt="Superbe T2 vue Mer avec grande piscine et 2 tennis" loading="lazy"><span class="tag">Appartement</span></div>
+      <div class="card-body">
+        <h3>Superbe T2 vue Mer avec grande piscine et 2 tennis</h3>
+        <div class="card-meta"><span class="chip">1 chambre</span><span class="chip">2 lits</span><span class="chip">Piscine</span><span class="chip">Tennis</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/49651179" rel="noopener">Voir sur Airbnb</a>
+      </div>
+    </article>
+    <article class="card reveal">
+      <div class="card-photo"><img src="images/annonces/l1_130151646710.jpg" alt="L'Alba Serena T2" loading="lazy"><span class="tag">Appartement</span></div>
+      <div class="card-body">
+        <h3>L'Alba Serena T2</h3>
+        <div class="card-meta"><span class="chip">1 chambre</span><span class="chip">3 lits</span><span class="chip">Réservation instantanée</span></div>
+        <a class="btn" href="https://www.airbnb.fr/rooms/1301516467108571165" rel="noopener">Voir sur Airbnb</a>
       </div>
     </article>
   </div>
@@ -254,51 +264,25 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
 
 <section class="ile" id="ile">
   <div class="section-head reveal">
-    <span class="eyebrow">Autour des maisons</span>
-    <h2 class="display">Tout est à moins d'une heure.</h2>
-    <p>Ce qu'on indique à tous nos vacanciers le jour de la remise des clés.</p>
+    <span class="eyebrow">Le golfe d'Ajaccio</span>
+    <h2 class="display">Vos vacances, entre plages et Sanguinaires.</h2>
   </div>
   <div class="ile-grid">
     <div class="ile-item reveal">
-      <h3>Les plages</h3>
-      <p>Sable blanc et eau turquoise côté Palombaggia et Santa Giulia, criques tranquilles vers Rondinara pour fuir la foule.</p>
-      <span class="dist">10 à 35 min en voiture</span>
+      <h3>Les îles Sanguinaires</h3>
+      <p>L'archipel au bout de la route des Sanguinaires et la pointe de la Parata : le coucher de soleil le plus célèbre de Corse.</p>
     </div>
     <div class="ile-item reveal">
-      <h3>Les aiguilles de Bavella</h3>
-      <p>Randonnées à l'ombre des pins laricio, piscines naturelles du Cavu pour se baigner en rivière quand la mer chauffe trop.</p>
-      <span class="dist">45 min en voiture</span>
+      <h3>Les plages du golfe</h3>
+      <p>Marinella, Barbicaja, Trottel côté ville ; Capo di Feno pour les vagues ; Porticcio et sa grande plage de sable en face du golfe.</p>
     </div>
     <div class="ile-item reveal">
-      <h3>Bonifacio</h3>
-      <p>La citadelle suspendue au-dessus des falaises, les calanques en bateau, les glaces sur le port en fin de journée.</p>
-      <span class="dist">50 min en voiture</span>
+      <h3>Ajaccio</h3>
+      <p>La cité impériale : le marché place Foch, la vieille ville, la maison Bonaparte et les terrasses du port.</p>
     </div>
     <div class="ile-item reveal">
-      <h3>Marchés &amp; producteurs</h3>
-      <p>Charcuterie, brocciu, miel du maquis et vins de Figari : le marché du dimanche matin suffit à remplir la semaine.</p>
-      <span class="dist">5 min à pied</span>
-    </div>
-  </div>
-</section>
-
-<section class="infos" id="infos">
-  <div class="infos-inner">
-    <div class="reveal">
-      <h2 class="display">Comment ça se passe</h2>
-      <ul>
-        <li>Séjours du samedi 16 h au samedi 10 h en juillet-août ; plus souple hors saison.</li>
-        <li>Linge de lit et de toilette fournis, lits faits à l'arrivée.</li>
-        <li>Remise des clés en main propre — on vous attend, même si le bateau a du retard.</li>
-      </ul>
-    </div>
-    <div class="reveal">
-      <h2 class="display">Bon à savoir</h2>
-      <ul>
-        <li>Acompte de 30 % à la réservation, solde un mois avant l'arrivée.</li>
-        <li>Animaux acceptés à la Casa di l'Alivu, sur demande ailleurs.</li>
-        <li>Ménage de fin de séjour inclus ; caution restituée sous 7 jours.</li>
-      </ul>
+      <h3>L'arrière-pays</h3>
+      <p>Les villages en balcon sur le golfe et les routes du maquis, à quelques minutes des plages.</p>
     </div>
   </div>
 </section>
@@ -306,20 +290,17 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
 <section class="contact" id="contact">
   <span class="eyebrow reveal">Réservation</span>
   <h2 class="display reveal">On vous garde une place <span class="ital">au soleil.</span></h2>
-  <p class="reveal">Écrivez-nous vos dates et le nombre de voyageurs : réponse sous 24 h avec les disponibilités et le tarif exact, sans frais de plateforme.</p>
-  <a class="btn btn-primary reveal" href="mailto:contact@easycorsica.net?subject=Demande%20de%20disponibilit%C3%A9s">Demander mes dates</a>
-  <p class="coord reveal">ou par téléphone au <a href="tel:+33600000000">06 00 00 00 00</a> · <a href="mailto:contact@easycorsica.net">contact@easycorsica.net</a></p>
+  <p class="reveal">Toutes les locations se réservent en ligne sur Airbnb : calendrier, tarifs à jour et paiement sécurisé, avec Isabelle comme hôte.</p>
+  <a class="btn btn-primary reveal" href="https://www.airbnb.fr/users/show/31966655" rel="noopener">Voir toutes les annonces d'Isabelle</a>
   <footer>
-    <span>© 2026 EasyCorsica — Locations de vacances en Corse</span>
-    <span>Sartène · Corse-du-Sud</span>
+    <span>© 2026 EasyCorsica — Locations &amp; Vacances</span>
+    <span>Golfe d'Ajaccio · Corse</span>
   </footer>
 </section>
 
 <script>
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Soleil : descend au scroll */
   if (!reduce){
     var sun = document.getElementById('sun'), t = false;
     window.addEventListener('scroll', function(){
@@ -330,8 +311,6 @@ footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.1
       });
     }, {passive:true});
   }
-
-  /* Révélations au scroll */
   var els = document.querySelectorAll('.reveal');
   if (reduce || !('IntersectionObserver' in window)){
     els.forEach(function(e){ e.classList.add('in'); });
