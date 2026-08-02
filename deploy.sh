@@ -8,6 +8,8 @@ TMP=$(mktemp -d)
 curl -fsSL https://codeload.github.com/wdemichiel-cmd/easycorsica/tar.gz/refs/heads/main | tar xz -C "$TMP" --strip-components=1
 sudo rsync -a --delete --exclude deploy.sh "$TMP"/ /var/www/easycorsica/
 rm -rf "$TMP"
+sudo chmod 755 /var/www/easycorsica
+sudo chmod -R a+rX /var/www/easycorsica
 
 CONF=$(grep -rl "default_server" /etc/nginx/sites-enabled/ 2>/dev/null | head -1)
 [ -z "$CONF" ] && CONF=$(ls /etc/nginx/sites-enabled/* 2>/dev/null | head -1)
@@ -24,6 +26,8 @@ TMP=$(mktemp -d)
 curl -fsSL https://codeload.github.com/wdemichiel-cmd/easycorsica/tar.gz/refs/heads/main | tar xz -C "$TMP" --strip-components=1
 rsync -a --delete --exclude deploy.sh "$TMP"/ /var/www/easycorsica/
 rm -rf "$TMP"
+chmod 755 /var/www/easycorsica
+chmod -R a+rX /var/www/easycorsica
 SYNC
 sudo chmod +x /usr/local/bin/easycorsica-sync
 echo "*/10 * * * * root /usr/local/bin/easycorsica-sync >/dev/null 2>&1" | sudo tee /etc/cron.d/easycorsica-sync >/dev/null
