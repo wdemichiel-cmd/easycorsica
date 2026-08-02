@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EasyCorsica — Locations de vacances en Corse</title>
+<meta name="description" content="Locations de vacances en Corse : villa, maison de village et studio, entre mer et maquis. Réservez votre été.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ciel-haut:#FFC178;
+  --ciel-bas:#F5854F;
+  --granite:#C7432B;
+  --mer:#0C5D6B;
+  --mer-sombre:#08454F;
+  --sable:#F2E0BE;
+  --sable-clair:#F8ECD3;
+  --maquis:#2E4034;
+  --maquis-sombre:#233229;
+  --encre:#26201A;
+  --craie:#FFF6E6;
+  --radius:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:"Figtree",system-ui,sans-serif;
+  color:var(--encre);
+  background:var(--sable);
+  line-height:1.6;
+}
+.display{
+  font-family:"Fraunces",serif;
+  font-optical-sizing:auto;
+  font-variation-settings:"SOFT" 80;
+  font-weight:560;
+  line-height:1.04;
+  letter-spacing:-0.015em;
+}
+.eyebrow{
+  font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--granite);outline-offset:3px;border-radius:4px}
+img{max-width:100%;display:block}
+
+/* ---------- NAV ---------- */
+nav{
+  position:absolute;top:0;left:0;right:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px clamp(20px,5vw,56px);
+}
+.brand{font-family:"Fraunces",serif;font-weight:640;font-size:1.35rem;text-decoration:none;color:var(--encre)}
+.brand em{font-style:italic;font-variation-settings:"SOFT" 100}
+nav ul{display:flex;gap:clamp(14px,3vw,34px);list-style:none}
+nav ul a{text-decoration:none;font-weight:600;font-size:.95rem;opacity:.85}
+nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:640px){nav ul{display:none}}
+
+/* ---------- HERO (ciel) ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  min-height:92svh;
+  display:flex;flex-direction:column;justify-content:center;
+  background:linear-gradient(180deg,var(--ciel-haut) 0%,var(--ciel-bas) 78%,var(--granite) 125%);
+  padding:120px clamp(20px,6vw,72px) 140px;
+}
+.sun{
+  position:absolute;right:clamp(4%,10vw,14%);top:20%;
+  width:clamp(150px,24vw,300px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 42% 38%,#FFF3D6 0%,#FFD98A 45%,#FFB25E 100%);
+  box-shadow:0 0 90px 30px rgba(255,220,150,.55);
+  will-change:transform;
+}
+.hero-inner{position:relative;z-index:2;max-width:820px}
+.hero .eyebrow{color:#7A2913}
+.hero h1{
+  font-size:clamp(2.9rem,8.4vw,6.4rem);
+  color:var(--encre);
+  margin:14px 0 22px;
+}
+.hero h1 .ital{font-style:italic;font-variation-settings:"SOFT" 100;color:#8C2B12}
+.hero p.lead{font-size:clamp(1.05rem,2vw,1.3rem);max-width:34em;font-weight:500;color:#3A2417}
+.hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-block;text-decoration:none;font-weight:700;
+  padding:15px 30px;border-radius:999px;font-size:1rem;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary{background:var(--encre);color:var(--craie)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(38,32,26,.28)}
+.btn-ghost{border:2px solid rgba(38,32,26,.55);color:var(--encre)}
+.btn-ghost:hover{border-color:var(--encre)}
+.meteo{font-size:.9rem;font-weight:600;color:#5A2E17;opacity:.9}
+
+/* horizon */
+.horizon{display:block;width:100%;height:70px;margin-bottom:-1px}
+
+/* ---------- LOCATIONS (mer) ---------- */
+.mer{background:linear-gradient(180deg,var(--mer) 0%,var(--mer-sombre) 100%);color:var(--craie);
+  padding:84px clamp(20px,6vw,72px) 110px}
+.section-head{max-width:760px;margin:0 auto 56px;text-align:center}
+.mer .eyebrow{color:#9FD8CF}
+.section-head h2{font-size:clamp(2rem,4.6vw,3.3rem);margin:12px 0 16px}
+.section-head p{opacity:.88;max-width:38em;margin:0 auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px;max-width:1180px;margin:0 auto}
+.card{
+  background:var(--sable-clair);color:var(--encre);
+  border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 18px 40px rgba(4,32,37,.35);
+}
+.card-visual{height:190px;position:relative;display:flex;align-items:flex-end;padding:16px}
+.v1{background:linear-gradient(160deg,#E8A45C,#C7432B 70%)}
+.v2{background:linear-gradient(160deg,#7FB69B,#2E4034 75%)}
+.v3{background:linear-gradient(160deg,#79C7CE,#0C5D6B 72%)}
+.card-visual .tag{
+  background:rgba(255,246,230,.92);border-radius:999px;
+  padding:6px 14px;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+}
+.card-body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card-body h3{font-family:"Fraunces",serif;font-size:1.5rem;font-weight:600}
+.card-body .desc{font-size:.97rem;opacity:.85;flex:1}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:rgba(38,32,26,.08);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:600}
+.card-price{display:flex;align-items:baseline;justify-content:space-between;margin-top:6px;border-top:1.5px solid rgba(38,32,26,.14);padding-top:14px}
+.card-price strong{font-family:"Fraunces",serif;font-size:1.45rem}
+.card-price span{font-size:.82rem;opacity:.7}
+.card a.btn{align-self:flex-start;background:var(--granite);color:var(--craie);padding:11px 22px;font-size:.92rem}
+.card a.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(199,67,43,.4)}
+
+/* ---------- ÎLE (sable) ---------- */
+.ile{background:var(--sable);padding:90px clamp(20px,6vw,72px) 80px}
+.ile .eyebrow{color:var(--granite)}
+.ile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px;max-width:1100px;margin:0 auto}
+.ile-item{border-top:3px solid var(--granite);padding-top:18px}
+.ile-item h3{font-family:"Fraunces",serif;font-size:1.28rem;font-weight:600;margin-bottom:8px}
+.ile-item p{font-size:.95rem;opacity:.85}
+.ile-item .dist{display:inline-block;margin-top:10px;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--mer)}
+
+/* ---------- INFOS ---------- */
+.infos{background:var(--sable-clair);padding:76px clamp(20px,6vw,72px)}
+.infos-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:720px){.infos-inner{grid-template-columns:1fr}}
+.infos h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:18px}
+.infos ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.infos li{padding-left:30px;position:relative;font-size:1rem}
+.infos li::before{
+  content:"";position:absolute;left:0;top:.42em;width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#FFD98A,var(--ciel-bas));
+}
+
+/* ---------- CONTACT (maquis) ---------- */
+.contact{background:linear-gradient(180deg,var(--maquis),var(--maquis-sombre));color:var(--craie);
+  padding:96px clamp(20px,6vw,72px) 60px;text-align:center}
+.contact .eyebrow{color:#A8C9A2}
+.contact h2{font-size:clamp(2.2rem,5.4vw,3.8rem);max-width:14em;margin:14px auto 18px}
+.contact h2 .ital{font-style:italic;font-variation-settings:"SOFT" 100;color:#E8C889}
+.contact p{opacity:.85;max-width:36em;margin:0 auto 34px}
+.contact .btn-primary{background:var(--craie);color:var(--maquis-sombre)}
+.contact .coord{margin-top:26px;font-size:.98rem;opacity:.85}
+.contact .coord a{text-underline-offset:4px}
+footer{margin-top:70px;padding-top:26px;border-top:1px solid rgba(255,246,230,.18);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.84rem;opacity:.65}
+</style>
+</head>
+<body>
+
+<nav aria-label="Navigation principale">
+  <a class="brand" href="#top">Easy<em>Corsica</em></a>
+  <ul>
+    <li><a href="#locations">Locations</a></li>
+    <li><a href="#ile">L'île</a></li>
+    <li><a href="#infos">Infos pratiques</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="sun" id="sun" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Locations de vacances · Corse-du-Sud</span>
+    <h1 class="display">L'été, la mer,<br>le <span class="ital">maquis.</span></h1>
+    <p class="lead">Trois maisons entre plage et montagne, tenues par une famille du coin. Vous arrivez, on vous donne les clés, l'île fait le reste.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#locations">Voir les locations</a>
+      <a class="btn btn-ghost" href="#contact">Demander des dates</a>
+    </div>
+    <p class="meteo" style="margin-top:30px">☀ 34° à l'ombre des pins — l'eau est à 26°.</p>
+  </div>
+</header>
+
+<svg class="horizon" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--granite)">
+  <path d="M0,40 C240,10 480,62 720,38 C960,14 1200,58 1440,32 L1440,70 L0,70 Z" fill="#0C5D6B"/>
+</svg>
+
+<section class="mer" id="locations">
+  <div class="section-head">
+    <span class="eyebrow">Nos locations</span>
+    <h2 class="display">Trois adresses, un seul mot d'ordre : les pieds dans l'eau avant midi.</h2>
+    <p>Toutes équipées, toutes à moins de 15 minutes d'une plage, louées du samedi au samedi en été.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <div class="card-visual v1"><span class="tag">Villa · 6 pers</span></div>
+      <div class="card-body">
+        <h3>Casa di l'Alivu</h3>
+        <p class="desc">Villa de plain-pied sous les oliviers, grande terrasse ombragée, piscine au sel et barbecue en pierre. Le soir, on entend les grillons, pas les voisins.</p>
+        <div class="card-meta">
+          <span class="chip">3 chambres</span><span class="chip">Piscine</span><span class="chip">Clim</span><span class="chip">Wifi</span>
+        </div>
+        <div class="card-price"><strong>à partir de 1 450 €</strong><span>la semaine</span></div>
+        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-visual v2"><span class="tag">Maison · 4 pers</span></div>
+      <div class="card-body">
+        <h3>U Fragnu</h3>
+        <p class="desc">Ancienne maison de village en granite, fraîche même en août, à deux ruelles de la place et de son marché. Terrasse sur les toits pour l'apéritif au coucher du soleil.</p>
+        <div class="card-meta">
+          <span class="chip">2 chambres</span><span class="chip">Terrasse</span><span class="chip">Clim</span><span class="chip">Wifi</span>
+        </div>
+        <div class="card-price"><strong>à partir de 890 €</strong><span>la semaine</span></div>
+        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-visual v3"><span class="tag">Studio · 2 pers</span></div>
+      <div class="card-body">
+        <h3>Studio Marina</h3>
+        <p class="desc">Studio lumineux au-dessus du port : vous prenez le café en regardant les bateaux sortir. Idéal pour un couple qui compte surtout vivre dehors.</p>
+        <div class="card-meta">
+          <span class="chip">Vue port</span><span class="chip">Cuisine équipée</span><span class="chip">Clim</span>
+        </div>
+        <div class="card-price"><strong>à partir de 520 €</strong><span>la semaine</span></div>
+        <a class="btn" href="#contact">Vérifier les disponibilités</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<svg class="horizon" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true" style="background:var(--mer-sombre)">
+  <path d="M0,34 C260,64 520,12 760,40 C1000,66 1240,20 1440,42 L1440,70 L0,70 Z" fill="#F2E0BE"/>
+</svg>
+
+<section class="ile" id="ile">
+  <div class="section-head">
+    <span class="eyebrow">Autour des maisons</span>
+    <h2 class="display">Tout est à moins d'une heure.</h2>
+    <p>Ce qu'on indique à tous nos vacanciers le jour de la remise des clés.</p>
+  </div>
+  <div class="ile-grid">
+    <div class="ile-item">
+      <h3>Les plages</h3>
+      <p>Sable blanc et eau turquoise côté Palombaggia et Santa Giulia, criques tranquilles vers Rondinara pour fuir la foule.</p>
+      <span class="dist">10 à 35 min en voiture</span>
+    </div>
+    <div class="ile-item">
+      <h3>Les aiguilles de Bavella</h3>
+      <p>Randonnées à l'ombre des pins laricio, piscines naturelles du Cavu pour se baigner en rivière quand la mer chauffe trop.</p>
+      <span class="dist">45 min en voiture</span>
+    </div>
+    <div class="ile-item">
+      <h3>Bonifacio</h3>
+      <p>La citadelle suspendue au-dessus des falaises, les calanques en bateau, les glaces sur le port en fin de journée.</p>
+      <span class="dist">50 min en voiture</span>
+    </div>
+    <div class="ile-item">
+      <h3>Marchés &amp; producteurs</h3>
+      <p>Charcuterie, brocciu, miel du maquis et vins de Figari : le marché du dimanche matin suffit à remplir la semaine.</p>
+      <span class="dist">5 min à pied</span>
+    </div>
+  </div>
+</section>
+
+<section class="infos" id="infos">
+  <div class="infos-inner">
+    <div>
+      <h2 class="display">Comment ça se passe</h2>
+      <ul>
+        <li>Séjours du samedi 16 h au samedi 10 h en juillet-août ; plus souple hors saison.</li>
+        <li>Linge de lit et de toilette fournis, lits faits à l'arrivée.</li>
+        <li>Remise des clés en main propre — on vous attend, même si le bateau a du retard.</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="display">Bon à savoir</h2>
+      <ul>
+        <li>Acompte de 30 % à la réservation, solde un mois avant l'arrivée.</li>
+        <li>Animaux acceptés à la Casa di l'Alivu, sur demande ailleurs.</li>
+        <li>Ménage de fin de séjour inclus ; caution restituée sous 7 jours.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="eyebrow">Réservation</span>
+  <h2 class="display">On vous garde une place <span class="ital">au soleil.</span></h2>
+  <p>Écrivez-nous vos dates et le nombre de voyageurs : réponse sous 24 h avec les disponibilités et le tarif exact, sans frais de plateforme.</p>
+  <a class="btn btn-primary" href="mailto:contact@easycorsica.net?subject=Demande%20de%20disponibilit%C3%A9s">Demander mes dates</a>
+  <p class="coord">ou par téléphone au <a href="tel:+33600000000">06 00 00 00 00</a> · <a href="mailto:contact@easycorsica.net">contact@easycorsica.net</a></p>
+  <footer>
+    <span>© 2026 EasyCorsica — Locations de vacances en Corse</span>
+    <span>Sartène · Corse-du-Sud</span>
+  </footer>
+</section>
+
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var sun = document.getElementById('sun');
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY;
+      sun.style.transform = 'translateY(' + Math.min(y * 0.55, 620) + 'px)';
+      ticking = false;
+    });
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
